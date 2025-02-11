@@ -146,12 +146,16 @@ class _EmployeeFormScreenState extends State<EmployeeFormScreen> {
     return Scaffold(
       backgroundColor: ColorManager.whiteColor,
       appBar: AppBar(
-          title: Text(
-            widget.index==null?"Add Employee Details": "Edit Employee Details",
-            style: GoogleFonts.roboto(
-              fontWeight: FontWeight.w500,
-              color: ColorManager.whiteColor,
-              fontSize: 18.sp,
+          title: FittedBox(
+            fit: BoxFit.scaleDown, // Ensures text resizes within the AppBar
+
+            child: Text(
+              widget.index==null?"Add Employee Details": "Edit Employee Details",
+              style: GoogleFonts.roboto(
+                fontWeight: FontWeight.w500,
+                color: ColorManager.whiteColor,
+                fontSize: MediaQuery.of(context).size.width > 600 ? 13.sp : 18.sp,
+              ),
             ),
           ),
           actions: [

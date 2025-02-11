@@ -191,12 +191,15 @@ class _CustomDatePickerDialogState extends State<CustomDatePickerDialog> {
           borderRadius: BorderRadius.all(Radius.circular(6)),
           color: isSelected ? ColorManager.blutColor : ColorManager.cancelButton,
         ),
-        child: Text(
-          label,
-          style: GoogleFonts.roboto(
-            fontWeight: FontWeight.w500,
-            color: isSelected ? Colors.white : Colors.blue,
-            fontSize: 14.sp,
+        child: FittedBox(
+
+          child: Text(
+            label,
+            style: GoogleFonts.roboto(
+              fontWeight: FontWeight.w500,
+              color: isSelected ? Colors.white : Colors.blue,
+              fontSize: 14.sp,
+            ),
           ),
         ),
       ),

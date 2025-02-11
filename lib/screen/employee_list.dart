@@ -16,16 +16,20 @@ class EmployeeListScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(0.9),
       appBar: AppBar(
-        title: Text(
-          "Employee List",
-          style: GoogleFonts.roboto(
-            fontWeight: FontWeight.w500,
-            color: ColorManager.whiteColor,
-            fontSize: 18.sp,
+        title: FittedBox(
+          fit: BoxFit.scaleDown, // Ensures text resizes within the AppBar
+          child: Text(
+            "Employee List",
+            style: GoogleFonts.roboto(
+              fontWeight: FontWeight.w500,
+              color: ColorManager.whiteColor,
+              fontSize: MediaQuery.of(context).size.width > 600 ? 13.sp : 18.sp, // Ensure this is responsive
+            ),
           ),
         ),
         backgroundColor: ColorManager.blutColor,
       ),
+
       body:
       BlocBuilder<EmployeeCubit, List<Employee>>(
         builder: (context, employees) {
